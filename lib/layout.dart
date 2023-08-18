@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:review123/cubit/cubit.dart';
 import 'package:review123/cubit/state.dart';
+import 'package:review123/layout/info/info_screen.dart';
 
 class LayOutScreen extends StatelessWidget {
   const LayOutScreen({super.key});
@@ -29,10 +30,8 @@ class LayOutScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  decoration: BoxDecoration(
-
-                    borderRadius: BorderRadius.circular(20.0)
-                  ),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   child: BottomNavigationBar(
                     items: cubit.items,
@@ -56,10 +55,22 @@ class LayOutScreen extends StatelessWidget {
               height: 80,
               width: 80,
               child: FloatingActionButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const InfoScreen(),
+                    ),
+                  );
+                },
                 backgroundColor: Colors.red,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.0)),
+                child: const Icon(
+                  Icons.pages,
+                  color: Colors.white,
+                  size: 50,
+                ),
               ),
             ),
             body: cubit.screens[cubit.currentIndex],
