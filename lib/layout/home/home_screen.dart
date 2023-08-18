@@ -5,11 +5,15 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Home Screen',
-        style: Theme.of(context).textTheme.headlineLarge,
-      ),
+    return Column(
+      children: [
+        Expanded(
+          child: Image.asset(
+            'assets/images/photo.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+      ],
     );
   }
 }
