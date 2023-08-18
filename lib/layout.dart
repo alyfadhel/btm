@@ -38,7 +38,7 @@ class LayOutScreen extends StatelessWidget {
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   child: BottomNavigationBar(
                     items: cubit.items,
-                    backgroundColor: Colors.purple,
+                    backgroundColor: Colors.teal,
                     type: BottomNavigationBarType.fixed,
                     unselectedIconTheme: const IconThemeData(
                       color: Colors.yellow,
