@@ -19,16 +19,14 @@ class LayOutScreen extends StatelessWidget {
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,
             bottomNavigationBar: Container(
-              height: 100,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(20.0,),
-                ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0)
               ),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: BottomAppBar(
-                notchMargin: 6.0,
+                notchMargin: 8.0,
+                height: 105,
+                color: Colors.red,
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 shape: const CircularNotchedRectangle(),
                 padding: EdgeInsets.zero,
@@ -36,6 +34,9 @@ class LayOutScreen extends StatelessWidget {
                   items: cubit.items,
                   backgroundColor: Colors.red,
                   type: BottomNavigationBarType.fixed,
+                  unselectedIconTheme: const IconThemeData(
+                    color: Colors.white,
+                  ),
                   currentIndex: cubit.currentIndex,
                   onTap: (index) {
                     cubit.changeBottomNav(index);
@@ -50,7 +51,6 @@ class LayOutScreen extends StatelessWidget {
               child: FloatingActionButton(
                 onPressed: () {},
                 backgroundColor: Colors.red,
-                isExtended: true,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.0)),
               ),

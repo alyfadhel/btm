@@ -36,7 +36,7 @@ class AppCubit extends Cubit<AppStates> {
         icon: Icon(
           Icons.settings,
         ),
-        label: 'settings,'),
+        label: 'settings'),
   ];
   List<Widget>screens = [
     const HomeScreen(),
