@@ -18,30 +18,21 @@ class LayOutScreen extends StatelessWidget {
             appBar: AppBar(),
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,
-            bottomNavigationBar: Container(
+            bottomNavigationBar: BottomAppBar(
+              notchMargin: 6.0,
               height: 100,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(20.0,),
-                ),
-              ),
               clipBehavior: Clip.antiAliasWithSaveLayer,
-              child: BottomAppBar(
-                notchMargin: 6.0,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                shape: const CircularNotchedRectangle(),
-                padding: EdgeInsets.zero,
-                child: BottomNavigationBar(
-                  items: cubit.items,
-                  backgroundColor: Colors.red,
-                  type: BottomNavigationBarType.fixed,
-                  currentIndex: cubit.currentIndex,
-                  onTap: (index) {
-                    cubit.changeBottomNav(index);
-                  },
-                  iconSize: 30.0,
-                ),
+              shape: const CircularNotchedRectangle(),
+              padding: EdgeInsets.zero,
+              child: BottomNavigationBar(
+                items: cubit.items,
+                backgroundColor: Colors.red,
+                type: BottomNavigationBarType.fixed,
+                currentIndex: cubit.currentIndex,
+                onTap: (index) {
+                  cubit.changeBottomNav(index);
+                },
+                iconSize: 30.0,
               ),
             ),
             floatingActionButton: SizedBox(
