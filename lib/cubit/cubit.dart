@@ -45,6 +45,13 @@ class AppCubit extends Cubit<AppStates> {
     const SettingsScreen(),
   ];
 
+  List<String> titles = [
+    'Home',
+    'Category',
+    'Favorite',
+    'settings',
+  ];
+
   void changeBottomNav(int index)
   {
     currentIndex = index;

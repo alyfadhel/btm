@@ -16,7 +16,10 @@ class LayOutScreen extends StatelessWidget {
         builder: (context, state) {
           var cubit = AppCubit.get(context);
           return Scaffold(
-            appBar: AppBar(),
+            appBar: AppBar(
+              title:
+                Text(cubit.titles[cubit.currentIndex])
+            ),
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.miniCenterDocked,
             bottomNavigationBar: BottomAppBar(

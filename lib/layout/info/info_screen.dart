@@ -15,6 +15,7 @@ class InfoScreen extends StatelessWidget {
             Icons.arrow_back_ios,
           ),
         ),
+        title: const Text('Info'),
       ),
       body: Center(
         child: Text(
