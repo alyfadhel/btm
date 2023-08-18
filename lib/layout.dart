@@ -17,31 +17,38 @@ class LayOutScreen extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(),
             floatingActionButtonLocation:
-                FloatingActionButtonLocation.centerDocked,
-            bottomNavigationBar: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0)
-              ),
+                FloatingActionButtonLocation.miniCenterDocked,
+            bottomNavigationBar: BottomAppBar(
+              notchMargin: 8,
+              height: 105,
+              elevation: 0.0,
+              //color: Colors.yellow,
               clipBehavior: Clip.antiAliasWithSaveLayer,
-              child: BottomAppBar(
-                notchMargin: 8.0,
-                height: 105,
-                color: Colors.red,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                shape: const CircularNotchedRectangle(),
-                padding: EdgeInsets.zero,
-                child: BottomNavigationBar(
-                  items: cubit.items,
-                  backgroundColor: Colors.red,
-                  type: BottomNavigationBarType.fixed,
-                  unselectedIconTheme: const IconThemeData(
-                    color: Colors.white,
+              shape: const CircularNotchedRectangle(),
+              padding: EdgeInsets.zero,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+
+                    borderRadius: BorderRadius.circular(20.0)
                   ),
-                  currentIndex: cubit.currentIndex,
-                  onTap: (index) {
-                    cubit.changeBottomNav(index);
-                  },
-                  iconSize: 30.0,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  child: BottomNavigationBar(
+                    items: cubit.items,
+                    backgroundColor: Colors.purple,
+                    type: BottomNavigationBarType.fixed,
+                    unselectedIconTheme: const IconThemeData(
+                      color: Colors.yellow,
+                    ),
+                    selectedItemColor: Colors.white,
+                    unselectedItemColor: Colors.yellow,
+                    currentIndex: cubit.currentIndex,
+                    onTap: (index) {
+                      cubit.changeBottomNav(index);
+                    },
+                    iconSize: 30.0,
+                  ),
                 ),
               ),
             ),
