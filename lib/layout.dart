@@ -66,7 +66,7 @@ class LayOutScreen extends StatelessWidget {
                     ),
                   );
                 },
-                backgroundColor: Colors.red,
+                backgroundColor: Colors.redAccent.withOpacity(.6),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.0)),
                 child: const Icon(
